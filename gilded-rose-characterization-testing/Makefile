@@ -11,6 +11,10 @@ coverage:
 	@go tool cover -html=/tmp/coverage.out -o /code/coverage.html
 	echo "Open coverage.html"
 
+.PHONY: mutation
+mutation:
+	@go-mutesting .
+
 .PHONY: docker-test
 docker-test:
 	@docker run --rm -v ${PWD}:/code -w /code golang:1.18 make test
@@ -18,3 +22,7 @@ docker-test:
 .PHONY: docker-coverage
 docker-coverage:
 	@docker run --rm -v ${PWD}:/code -w /code golang:1.18 make coverage
+
+.PHONY: docker-mutation
+docker-mutation:
+	@docker run --rm -v ${PWD}:/code codiumteam/legacy-training-go make mutation
