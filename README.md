@@ -16,4 +16,4 @@ Enjoy the training.
 - Trip service
 - Trivia golden master
 - Gilded rose golden master
-- Print date
+- [Print date](./print-date)
