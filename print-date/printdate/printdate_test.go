@@ -1,7 +1,7 @@
 package printdate_test
 
 import (
-	"printdate"
+	"printdate/printdate"
 	"testing"
 )
 

@@ -3,7 +3,7 @@ default: docker-test
 # Local commands
 .PHONY: test
 test:
-	go test
+	go test ./...
 
 .PHONY: docker-test
 docker-test:
