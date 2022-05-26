@@ -1,7 +1,8 @@
-package tenniskata
+package tennis_test
 
 import (
 	"math"
+	tennis "tenniskata"
 	"testing"
 )
 
@@ -53,7 +54,7 @@ var testData = []testDataSample{
 
 func TestSuiteOnGame(t *testing.T) {
 	for _, sample := range testData {
-		game := newTennisGame("player1", "player2")
+		game := tennis.NewGame("player1", "player2")
 		highestScore := int(math.Max(float64(sample.player1Score), float64(sample.player2Score)))
 
 		for i := 0; i < highestScore; i++ {

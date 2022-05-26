@@ -1,38 +1,39 @@
-package tenniskata
+package tennis
 
-type TennisGame interface {
+type Game interface {
 	WonPoint(playerName string)
 	GetScore() string
 }
 
-type tennisGame struct {
-	m_score1    int
-	m_score2    int
+type game struct {
+	mScore1     int
+	mScore2     int
 	player1Name string
 	player2Name string
 }
 
-func newTennisGame(player1Name string, player2Name string) TennisGame {
-	game := &tennisGame{
+func NewGame(player1Name string, player2Name string) Game {
+	game := &game{
 		player1Name: player1Name,
-		player2Name: player2Name}
+		player2Name: player2Name,
+	}
 
 	return game
 }
 
-func (game *tennisGame) WonPoint(playerName string) {
+func (game *game) WonPoint(playerName string) {
 	if playerName == "player1" {
-		game.m_score1 += 1
+		game.mScore1 += 1
 	} else {
-		game.m_score2 += 1
+		game.mScore2 += 1
 	}
 }
 
-func (game *tennisGame) GetScore() string {
+func (game *game) GetScore() string {
 	score := ""
 	tempScore := 0
-	if game.m_score1 == game.m_score2 {
-		switch game.m_score1 {
+	if game.mScore1 == game.mScore2 {
+		switch game.mScore1 {
 		case 0:
 			score = "Love-All"
 		case 1:
@@ -42,8 +43,8 @@ func (game *tennisGame) GetScore() string {
 		default:
 			score = "Deuce"
 		}
-	} else if game.m_score1 >= 4 || game.m_score2 >= 4 {
-		minusResult := game.m_score1 - game.m_score2
+	} else if game.mScore1 >= 4 || game.mScore2 >= 4 {
+		minusResult := game.mScore1 - game.mScore2
 		if minusResult == 1 {
 			score = "Advantage player1"
 		} else if minusResult == -1 {
@@ -56,10 +57,10 @@ func (game *tennisGame) GetScore() string {
 	} else {
 		for i := 1; i < 3; i++ {
 			if i == 1 {
-				tempScore = game.m_score1
+				tempScore = game.mScore1
 			} else {
 				score += "-"
-				tempScore = game.m_score2
+				tempScore = game.mScore2
 			}
 			switch tempScore {
 			case 0:
