@@ -1,14 +1,17 @@
-package print_date
+package printdate_test
 
-import "testing"
+import (
+	"printdate"
+	"testing"
+)
 
 func Test_PrintDate(t *testing.T) {
-	printDate := PrintDate{
-		Calendar{},
-		Printer{},
-	}
+	printDate := printdate.NewPrintDate(
+		printdate.NewCalendar(),
+		printdate.NewPrinter(),
+	)
 
-	printDate.printCurrentDate()
+	printDate.PrintCurrentDate()
 
 	// How can we test this function?
 }
