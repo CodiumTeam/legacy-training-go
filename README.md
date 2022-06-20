@@ -12,7 +12,7 @@ Enjoy the training.
 - [Tennis refactoring kata](./tennis-refactoring-kata)
 - User registration
 - [Gilded rose characterization testing](./gilded-rose-characterization-testing)
-- Weather kata
+- [Weather kata](./weather-kata)
 - Trip service
 - Trivia golden master
 - Gilded rose golden master
