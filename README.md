@@ -14,6 +14,6 @@ Enjoy the training.
 - [Gilded rose characterization testing](./gilded-rose-characterization-testing)
 - [Weather kata](./weather-kata)
 - Trip service
-- Trivia golden master
+- [Trivia golden master](./trivia)
 - Gilded rose golden master
 - [Print date](./print-date)
