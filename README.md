@@ -10,7 +10,7 @@ Enjoy the training.
 ## Katas
 - [Webpage generator](./web-page-generator-kata)
 - [Tennis refactoring kata](./tennis-refactoring-kata)
-- User registration
+- [User registration](./user-registration-refactoring-kata)
 - [Gilded rose characterization testing](./gilded-rose-characterization-testing)
 - [Weather kata](./weather-kata)
 - Trip service
