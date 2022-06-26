@@ -15,5 +15,5 @@ Enjoy the training.
 - [Weather kata](./weather-kata)
 - Trip service
 - [Trivia golden master](./trivia)
-- Gilded rose golden master
+- [Gilded rose golden master](./gilded-rose-golden-master)
 - [Print date](./print-date)
