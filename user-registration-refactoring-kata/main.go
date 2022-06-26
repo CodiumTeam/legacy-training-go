@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	gomail "gopkg.in/gomail.v2"
 	"math/rand"
 	"net/http"
 	"strings"
@@ -53,6 +55,21 @@ func setupRouter() *gin.Engine {
 		}
 		userId := rand.Int()
 		repo.save(User{userId, c.Query("name"), c.Query("email"), c.Query("password")})
+
+		msg := gomail.NewMessage()
+		msg.SetHeader("From", "noreply@codium.team")
+		msg.SetHeader("To", c.Query("email"))
+		msg.SetHeader("Subject", fmt.Sprintf("Welcome to Codium, %s", c.Query("email")))
+		msg.SetBody("text/html", "This is the HTML message body <b>in bold!</b>")
+
+		//n :=
+		gomail.NewDialer("smtp.gmail.com", 587, "username", "<validPassword>")
+
+		// Send the email
+		//if err := n.DialAndSend(msg); err != nil {
+		//	panic(err)
+		//}
+
 		response := UserPostResponse{
 			Id:    userId,
 			Email: c.Query("Email"),
