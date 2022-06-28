@@ -12,7 +12,7 @@ import (
 func Test_should_success_when_everything_is_valid(t *testing.T) {
 	router := setupRouter()
 	w := httptest.NewRecorder()
-	url := "/users?name=Codium&Email=my@Email.com&password=myPass_123123"
+	url := "/users?name=Codium&email=my@Email.com&password=myPass_123123"
 	req, _ := http.NewRequest(http.MethodPost, url, nil)
 
 	router.ServeHTTP(w, req)
@@ -23,7 +23,7 @@ func Test_should_success_when_everything_is_valid(t *testing.T) {
 func TestShould_returns_a_user_with_the_email_when_everything_is_valid(t *testing.T) {
 	router := setupRouter()
 	w := httptest.NewRecorder()
-	url := "/users?name=Codium&Email=my@Email.com&password=myPass_123123"
+	url := "/users?name=Codium&email=my@Email.com&password=myPass_123123"
 	req, _ := http.NewRequest(http.MethodPost, url, nil)
 
 	router.ServeHTTP(w, req)
@@ -36,7 +36,7 @@ func TestShould_returns_a_user_with_the_email_when_everything_is_valid(t *testin
 func TestShould_returns_a_user_with_the_name_when_everything_is_valid(t *testing.T) {
 	router := setupRouter()
 	w := httptest.NewRecorder()
-	url := "/users?name=Codium&Email=my@Email.com&password=myPass_123123"
+	url := "/users?name=Codium&email=my@Email.com&password=myPass_123123"
 	req, _ := http.NewRequest(http.MethodPost, url, nil)
 
 	router.ServeHTTP(w, req)
@@ -49,7 +49,7 @@ func TestShould_returns_a_user_with_the_name_when_everything_is_valid(t *testing
 func TestShould_fail_when_password_is_short(t *testing.T) {
 	router := setupRouter()
 	w := httptest.NewRecorder()
-	url := "/users?name=Codium&Email=my@Email.com&password=myPas_1"
+	url := "/users?name=Codium&email=my@Email.com&password=myPas_1"
 	req, _ := http.NewRequest(http.MethodPost, url, nil)
 
 	router.ServeHTTP(w, req)
@@ -61,7 +61,7 @@ func TestShould_fail_when_password_is_short(t *testing.T) {
 func TestShould_fail_when_password_does_not_contain_underscore(t *testing.T) {
 	router := setupRouter()
 	w := httptest.NewRecorder()
-	url := "/users?name=Codium&Email=my@Email.com&password=myPass123123"
+	url := "/users?name=Codium&email=my@Email.com&password=myPass123123"
 	req, _ := http.NewRequest(http.MethodPost, url, nil)
 
 	router.ServeHTTP(w, req)
@@ -73,7 +73,7 @@ func TestShould_fail_when_password_does_not_contain_underscore(t *testing.T) {
 func TestShould_fail_when_email_is_used(t *testing.T) {
 	router := setupRouter()
 	w := httptest.NewRecorder()
-	url := "/users?name=Codium&Email=my@Email.com&password=myPass_123123"
+	url := "/users?name=Codium&email=my@Email.com&password=myPass_123123"
 	req, _ := http.NewRequest(http.MethodPost, url, nil)
 	router.ServeHTTP(w, req)
 	w = httptest.NewRecorder()
