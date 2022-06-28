@@ -7,7 +7,7 @@ There is an example test to simplify writing the first test.
 
 You can to run the test with coverage in order to know if all the paths have been executed.
 
-You can to run [PIT mutation testing](http://pitest.org/) in order to know if all the boundaries have been ensured.
+You can to run mutation testing in order to know if all the boundaries have been ensured.
 
 # Business requirements
 - At the end of each day items lowers quality and sellIn by one
@@ -23,49 +23,8 @@ You can to run [PIT mutation testing](http://pitest.org/) in order to know if al
 - Use the characterization test technique and code coverage to identify the Backstage passes requirements and try to reach 100% coverage.
 - As code coverage is not enough, use mutation testing to find extra requirements writing new tests.
 
-## How to run and see the result
-## Locally
-### on Linux and Mac
-Run the tests
-
-    make test
-
-Run the code coverage
-
-    make coverage
-
-Mutation
-
-    You can install Pitest in either Eclipse (Pitclipse) and IntellyJ (PITEst)
-    
-     https://marketplace.eclipse.org/content/pitclipse
-     
-     https://plugins.jetbrains.com/plugin/7119-pit-mutation-testing-idea-plugin
-or
-
-    make mutation
-
-    
-### on Windows
-Open the Makefile and copy and paste the lines below each command.
-	
-## Docker
-
-### on Linux and Mac
-Run the tests
-    
-    make docker-test
-
-Run the code coverage
-    
-    make docker-coverage
-
-How to run mutation testing:
-
-    make docker-mutation
-
-### on Windows
-Open the Makefile and copy and paste the lines below each command.
+## How to run the kata
+Use make or open the Makefile and copy and paste the lines below each command.
 
 
 ## Inspired by:
